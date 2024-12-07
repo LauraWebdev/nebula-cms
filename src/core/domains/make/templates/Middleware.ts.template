@@ -1,0 +1,29 @@
+import responseError from '@src/core/domains/express/requests/responseError';
+import { BaseRequest } from '@src/core/domains/express/types/BaseRequest.t';
+import { NextFunction, Response } from 'express';
+
+/**
+ * <enter description>
+ *
+ * @param {BaseRequest} req - The request object
+ * @param {Response} res - The response object
+ * @param {NextFunction} next - The next function
+ * @returns {Promise<void>}
+ */
+
+export const #name# = () => async (req: BaseRequest, res: Response, next: NextFunction): Promise<void> => {
+    try {
+
+        /**
+         * Modify your middleware logic
+         */
+
+        next();
+    }
+    catch (error) {
+        if(error instanceof Error) {
+            responseError(req, res, error)
+            return;
+        }
+    }
+};

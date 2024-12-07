@@ -1,0 +1,13 @@
+services:
+  api:
+    container_name: larascript-api
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - /app/node_modules
+    working_dir: /app
+    networks:
+      - app-network

@@ -1,0 +1,24 @@
+import { IEventPayload } from "@src/core/domains/events/interfaces/IEventPayload";
+import EventListener from "@src/core/domains/events/services/EventListener";
+
+export interface I#name#Data extends IEventPayload {
+
+}
+
+/**
+ * <enter description>
+ */
+export class #name# extends EventListener<I#name#Data> {
+
+    /**
+     * Handle the dispatched event
+     * @param payload The dispatched event payload
+     */
+    handle = async (payload: I#name#Data) => {
+
+        // Handle the logic
+
+    }
+
+}
+
